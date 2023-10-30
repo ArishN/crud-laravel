@@ -10,9 +10,20 @@ class EmployeeController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
+     
     public function index()
     {
-        return view('employee.index');
+
+        $employeedata = Employee::get()->toArray();
+      
+
+        
+        return view('employee.index',compact('employeedata'));
     }
     public function create()
     {
@@ -28,16 +39,29 @@ class EmployeeController extends Controller
         $request->validate([
             'firstname' => 'required|max:255',
             'lastname' => 'required', 
-            'joiningdate' => 'required', 
+            'date' => 'required', 
           ]);
+
+
 
 
         $employeedata = $request->all();
 
+
+
+        $existingemployeedata = Employee::where('email','=',$request['email'])->first();
+
+
+if(isset($existingemployeedata))
+{
+    return redirect()->back()
+        ->with('error', 'Email Id Already Exist');
+}
+   
         Employee::create($employeedata);
 
         return redirect()->route('index')
-        ->with('success', 'Post created successfully.');
+        ->with('success', 'Data created successfully.');
 
 
     }
@@ -45,17 +69,27 @@ class EmployeeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function edit(string $id)
     {
-        //
+        $existingemployeedata = Employee::where('id','=',$id)->first()->toArray();
+       
+      return view('employee.edit',compact('existingemployeedata'));
+      
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $updatedemployeedata = $request->all();
+        $existingemployeedata = Employee::where('id','=',$request['existing_id'])->first();
+        if(isset($existingemployeedata)){
+            $existingemployeedata->update($updatedemployeedata);
+            return redirect()->route('index')
+            ->with('success', 'Data Updated successfully.');
+        }
+
     }
 
     /**
@@ -63,6 +97,15 @@ class EmployeeController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+
+       
+        $existingemployeedata = Employee::where('id','=',$id)->first();
+       
+$existingemployeedata->delete();
+
+return redirect()->back()->with('warning','The record has been deleted !');
+
+    
+        
     }
 }
