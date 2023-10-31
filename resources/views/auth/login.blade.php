@@ -2,10 +2,29 @@
 
 @section('content')
 <div class="container">
+   
     <div class="row justify-content-center align-items-center" style="min-height: 100vh">
+        
         <div class="col-md-8">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <div class="col-6">
+                    <h4>Sample Credentials:</h4>
+                    <p>E-mail : test@example.com</p>
+                </div>
+                <div class="col-6">
+                    <p>Password : 12345678</p>
+    
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+              
+                    
+                
+                <div class="card-header">
+                    {{ __('Login') }}
+                
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
