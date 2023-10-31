@@ -4,7 +4,10 @@
 
 <div class="home p-md-5 p-3 mx-auto">
 <div class="top_bar row">
-    <div class="col-md-6"></div>
+    <div class="col-md-6">
+       
+
+    </div>
 <div class="col-md-6">
     <a href="/create">
     <button class="btn btn-primary float-end">Add Employee</button>
@@ -96,8 +99,11 @@
 
 
   <div style="position: fixed;bottom:10px;right:10px;">
-    <a href="/logout" class="btn btn-danger p-1" style="text-decoration:none;">
-        logout
+    @if (Route::has('register'))
+    <a href="{{ route('register') }}"class="text-decoration-none btn btn-success m-2" style="border-radius:50%;"><i class="bi bi-person-plus" style="font-size: 20px"></i></a>
+@endif
+    <a href="/logout" class="btn btn-danger" style="text-decoration:none; border-radius:50%;">
+        <i class="bi bi-box-arrow-right" style="font-size: 20px"></i>
     </a>
   </div>
 

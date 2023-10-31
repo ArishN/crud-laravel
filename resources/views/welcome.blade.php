@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{ config('app.name', 'Laravel Crud') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -22,9 +22,6 @@
                     @else
                         <a href="{{ route('login') }}" class="fw-bold text-decoration-none mx-2" style="color: grey">Log in</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}"class="fw-bold text-decoration-none mx-2" style="color: grey">Register</a>
-                        @endif
                     @endauth
                 </div>
             @endif
