@@ -13,8 +13,5 @@
         "laravel-vite-plugin": "^0.8.0",
         "sass": "^1.56.1",
         "vite": "^4.0.0"
-    },
-    "build": {
-        "outDir": "dist"
     }
 }
