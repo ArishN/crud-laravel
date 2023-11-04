@@ -36,7 +36,7 @@
             "config": {
                 "maxLambdaSize": "15mb"
             },
-            "command": "composer install --no-dev"
+            "installCommand": "composer install --no-dev"
         }
     ]
 }
