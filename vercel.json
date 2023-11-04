@@ -28,5 +28,18 @@
         "VIEW_COMPILED_PATH": "/tmp/views",
         "SSR_TEMP_PATH": "/tmp/ssr",
         "NODE_PATH": "node"
-    }
+    },
+    "builds": [
+        {
+            "src": "api",
+            "use": "@vercel/node",
+            "config": {
+                "maxLambdaSize": "15mb"
+            },
+            "env": {
+                "COMPOSER_VERSION": "2.5.4"
+            },
+            "command": "composer install --no-dev"
+        }
+    ]
 }
