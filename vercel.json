@@ -36,9 +36,6 @@
             "config": {
                 "maxLambdaSize": "15mb"
             },
-            "env": {
-                "COMPOSER_VERSION": "2.5.4"
-            },
             "command": "composer install --no-dev"
         }
     ]
