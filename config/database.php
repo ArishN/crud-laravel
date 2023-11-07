@@ -77,7 +77,7 @@ return [
             'search_path' => 'public',
             'sslmode' => 'require',
             'options' => [
-                'endpoint' => env('DB_ENDPOINTID', ''), 
+                'endpoint' => 'ep-lingering-butterfly-79259242', 
             ],
         ],
 
