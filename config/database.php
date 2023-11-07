@@ -75,7 +75,10 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             'search_path' => 'public',
-            'sslmode' => 'prefer',
+            'sslmode' => 'require',
+            'options' => [
+                'endpoint' => env('DB_ENDPOINTID', ''), 
+            ],
         ],
 
         'sqlsrv' => [
