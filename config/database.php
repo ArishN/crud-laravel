@@ -75,11 +75,12 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             'search_path' => 'public',
-             'sslmode' => 'allow',
             'options' => [
                 'endpoint' => env('NEON_ENDPOINT_ID', 'ep-lingering-butterfly-79259242'), 
 
             ],
+             'sslmode' => 'allow',
+            
         ],
 
         'sqlsrv' => [
