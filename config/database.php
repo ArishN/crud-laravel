@@ -76,11 +76,12 @@ return [
             'prefix_indexes' => true,
             'search_path' => 'public',
             'options' => [
-                'endpoint' =>'ep-lingering-butterfly-79259242', 
-
+                'endpoint' => 'ep-lingering-butterfly-79259242;' . env('DB_PASSWORD', ''),
             ],
+            
              'sslmode' => 'require',
              'log' => true,
+             'endpoint' => 'ep-lingering-butterfly-79259242'
         ],
 
         'sqlsrv' => [
