@@ -18,10 +18,10 @@ class EmployeeController extends Controller
      
     public function index()
     {
-dd("ithu varai ok");
+
         $employeedata = Employee::get()->toArray();
       
-
+        dd($employeedata);
         
         return view('employee.index',compact('employeedata'));
     }
