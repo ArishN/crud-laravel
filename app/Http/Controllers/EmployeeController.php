@@ -18,7 +18,7 @@ class EmployeeController extends Controller
      
     public function index()
     {
-
+dd("ithu varai ok");
         $employeedata = Employee::get()->toArray();
       
 
