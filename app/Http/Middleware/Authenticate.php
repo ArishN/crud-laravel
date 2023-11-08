@@ -13,10 +13,7 @@ class Authenticate extends Middleware
      */
     protected function redirectTo(Request $request): ?string
     {
-        $queries = DB::getQueryLog();
-
-        // Use dd to dump the queries and terminate the script
-        dd($queries);
+  
         return $request->expectsJson() ? null : route('login');
     }
 }
