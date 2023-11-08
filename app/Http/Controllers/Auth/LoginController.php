@@ -45,10 +45,7 @@ class LoginController extends Controller
     public function logout(Request $request): RedirectResponse
 {
 
-    $queries = DB::getQueryLog();
-
-// Use dd to dump the queries and terminate the script
-dd($queries);
+   
     Auth::logout();
  
     $request->session()->invalidate();
