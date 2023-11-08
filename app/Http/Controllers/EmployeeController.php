@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class EmployeeController extends Controller
 {
@@ -20,9 +19,9 @@ class EmployeeController extends Controller
     public function index()
     {
 
-        $employeedata = DB::table('employee')->get()->toArray();
+        $employeedata = Employee::get()->toArray();
       
-        dd($employeedata);
+
         
         return view('employee.index',compact('employeedata'));
     }
