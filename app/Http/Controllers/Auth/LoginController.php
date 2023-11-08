@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
@@ -43,6 +44,11 @@ class LoginController extends Controller
 
     public function logout(Request $request): RedirectResponse
 {
+
+    $queries = DB::getQueryLog();
+
+// Use dd to dump the queries and terminate the script
+dd($queries);
     Auth::logout();
  
     $request->session()->invalidate();
