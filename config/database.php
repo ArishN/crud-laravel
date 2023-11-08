@@ -78,6 +78,7 @@ return [
             'sslmode' => 'require',
             
         ],
+        
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
