@@ -10,7 +10,13 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
+<style>
+    @media only screen and (max-width:600px){
+.title_text{
+    font-size: 18px;
+}
+    }
+</style>
    
     </head>
     <body class="antialiased">
@@ -28,7 +34,7 @@
 
             <div style="min-height: 100vh" class="w-100 d-flex align-items-center justify-content-center">
 
-                <h1 style="font-weight:bold;" >Crud App Using <span class="text-light bg-primary p-3 rounded">Laravel 10</span></h1>
+                <h1 style="font-weight:bold;" class="title_text" >Crud App Using <span class="text-light bg-primary p-3 rounded">Laravel 10</span></h1>
             </div>
         </div>
     </body>
