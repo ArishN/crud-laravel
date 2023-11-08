@@ -75,8 +75,8 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             'search_path' => 'public',
-            'connection' => [
-                'options' => env('NEON_ENDPOINT_ID', 'ep-lingering-butterfly-79259242'), 
+            'options' => [
+                'endpoint' => env('NEON_ENDPOINT_ID', 'ep-lingering-butterfly-79259242'), 
 
             ],
              'sslmode' => 'require',
