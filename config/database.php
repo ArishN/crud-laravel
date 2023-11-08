@@ -80,7 +80,7 @@ return [
 
             ],
              'sslmode' => 'require',
-            
+             'log' => true,
         ],
 
         'sqlsrv' => [
