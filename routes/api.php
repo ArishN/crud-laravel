@@ -20,3 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/test', 'TestController@testFunc');
+
+Route::get('testtwo', function () {
+    return "hola";
+});
